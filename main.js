@@ -1,6 +1,5 @@
 import $ from "jquery";
 import "./style.css";
-import "animate.css";
 
 //? global variables
 const arrowDirection = ["left", "up", "down", "right"];
