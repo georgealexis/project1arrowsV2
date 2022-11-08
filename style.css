@@ -38,7 +38,7 @@ p {
   font-size: 100px;
   margin-top: 20vh;
   padding: 20px;
-  border: 5px solid black;
+  border: 10px solid black;
   border-radius: 50%;
   margin: 0px;
 }
@@ -55,4 +55,16 @@ p {
   height: 15px;
   background-color: green;
   border-radius: 5px;
+}
+
+#spacebar {
+  border: 5px solid white;
+  font-size: 70px;
+  text-align: center;
+  padding: 10px;
+  margin: 20px auto auto auto;
+  display: flex;
+  height: 10px;
+  width: 30%;
+  background-color: black;
 }
