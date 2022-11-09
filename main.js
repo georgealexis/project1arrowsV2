@@ -5,11 +5,9 @@ import "./style.css";
 const arrowDirection = ["left", "up", "down", "right"];
 let currentscore = 0;
 let highscore = 0;
-const gameDuration = 10;
-let directionOfArrow = "";
+let gameDuration = 10;
 let arrowRow = [];
-let greenCircle = 1;
-// let lowerCaseArrowRow = [];
+let arrowPostion = 1;
 
 //? main body of the game
 const $mainbody = $("<main>").addClass("gameBody");
@@ -20,7 +18,7 @@ const getRandomInt = (numberofdirectionarrows) => {
   return Math.floor(Math.random() * numberofdirectionarrows);
 };
 
-//? function to create 9 arrows
+//? function to create 8 arrows
 const createArrow = () => {
   for (let i = 1; i < 9; i++) {
     let x = arrowDirection[getRandomInt(4)];
@@ -30,7 +28,7 @@ const createArrow = () => {
       )
       .attr("id", "arrow" + i);
     $(".gameBody").append($arrow);
-    arrowRow.push((directionOfArrow = "arrow" + `${x.toLowerCase()}`));
+    arrowRow.push("arrow" + `${x.toLowerCase()}`);
   }
 };
 
@@ -97,8 +95,8 @@ $("#start").on("click", () => {
       $("body").on("keydown", (event) => {
         let b = event.code.toLowerCase();
         if (arrowRow[0] === b) {
-          $(`#arrow${greenCircle}`).css("border", "10px solid green");
-          greenCircle++;
+          $(`#arrow${arrowPostion}`).css("border", "10px solid green");
+          arrowPostion++;
           currentscore++;
           $("#currentscore").text(`${currentscore}`);
           arrowRow.shift();
@@ -108,7 +106,7 @@ $("#start").on("click", () => {
         if (event.code === "Space" && arrowRow.length === 0) {
           $(".arrow").remove();
           createArrow();
-          greenCircle = 1;
+          arrowPostion = 1;
         }
       });
     }
@@ -122,11 +120,10 @@ $("#reset").on("click", () => {
   $("h1").text("A-R-R-O-W");
   currentscore = 0;
   $("#currentscore").text("0");
-  $(".arrow").remove();
   $("#start").show();
   $("#timerBar").css("width", "100%");
   arrowRow = [];
-  greenCircle = 1;
+  arrowPostion = 1;
 });
 //? removes "gameover"
 //? header 1 becomes A-R-R-O-W
