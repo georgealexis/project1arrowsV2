@@ -192,3 +192,10 @@ $("#reset").on("click", () => {
 ```   
 </p>
 
+  <h2>References</h2>
+  <ul>
+    <li> https://www.youtube.com/watch?v=dq_Waw3Vl-Y&t=46s </li>
+    <li> https://www.youtube.com/watch?v=V0RPzfqrFj4 </li>
+    <li> https://api.jquery.com/unbind/ </li>
+    <li> https://www.geeksforgeeks.org/how-to-disable-a-button-in-jquery-dialog-from-a-function/ </li>
+  </ul>
